@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="RSSFeed" representedClassName="RSSFeed" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pubDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnailLarge" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnailSmall" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="RSSFeed" positionX="160" positionY="192" width="128" height="150"/>
+    </elements>
+</model>

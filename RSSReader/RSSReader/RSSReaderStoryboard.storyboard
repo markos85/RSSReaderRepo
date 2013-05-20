@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hNM-cK-DiU">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Feed View Controller - RSS Feed-->
+        <scene sceneID="OnK-00-I15">
+            <objects>
+                <viewController id="2DN-Xs-NcZ" customClass="RSSFeedViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d3G-nu-sUf">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RPK-Wo-Jcz">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="rssFeedCell" id="Lth-io-0gh">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ERJ-Sw-9PD">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="Eiz-8b-1aq"/>
+                                                        <constraint firstAttribute="width" constant="32" id="zBz-K5-ibz"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1Q-yy-DBa">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="263" id="t09-3g-CrT"/>
+                                                        <constraint firstAttribute="height" constant="13" id="yes-yv-wIm"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="E1Q-yy-DBa" firstAttribute="top" secondItem="Lth-io-0gh" secondAttribute="top" constant="14" id="2Ny-wS-YQE"/>
+                                            <constraint firstItem="ERJ-Sw-9PD" firstAttribute="leading" secondItem="Lth-io-0gh" secondAttribute="leading" constant="10" id="5Kr-sX-YUn"/>
+                                            <constraint firstItem="E1Q-yy-DBa" firstAttribute="leading" secondItem="ERJ-Sw-9PD" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Snv-3z-JyJ"/>
+                                            <constraint firstItem="ERJ-Sw-9PD" firstAttribute="top" secondItem="Lth-io-0gh" secondAttribute="top" constant="5" id="bex-GX-IsO"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2DN-Xs-NcZ" id="AVA-xB-2Ec"/>
+                                    <outlet property="delegate" destination="2DN-Xs-NcZ" id="ZDc-G9-hcc"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RPK-Wo-Jcz" firstAttribute="bottom" secondItem="d3G-nu-sUf" secondAttribute="bottom" type="default" id="AQH-x2-B0r"/>
+                            <constraint firstItem="RPK-Wo-Jcz" firstAttribute="top" secondItem="d3G-nu-sUf" secondAttribute="top" type="default" id="GKi-az-SsW"/>
+                            <constraint firstItem="RPK-Wo-Jcz" firstAttribute="trailing" secondItem="d3G-nu-sUf" secondAttribute="trailing" type="default" id="J8O-nJ-RJD"/>
+                            <constraint firstItem="RPK-Wo-Jcz" firstAttribute="leading" secondItem="d3G-nu-sUf" secondAttribute="leading" type="default" id="xsR-Zb-6LA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="RSS Feed" id="df0-7k-kcX">
+                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="hrh-zZ-Sw9">
+                            <connections>
+                                <action selector="refreshRSS:" destination="2DN-Xs-NcZ" id="NI7-Rq-CAt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="rightBarButton" destination="hrh-zZ-Sw9" id="wvO-mL-b16"/>
+                        <outlet property="rssFeedTableView" destination="RPK-Wo-Jcz" id="4H8-XB-KZh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kzm-UC-eGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-731" y="-358"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="3VP-Tv-MQT">
+            <objects>
+                <viewController storyboardIdentifier="webViewController" id="LMK-v2-TgL" customClass="WebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YUZ-CZ-JMO">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sM1-1G-f7t">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sM1-1G-f7t" firstAttribute="bottom" secondItem="YUZ-CZ-JMO" secondAttribute="bottom" type="default" id="9Zv-Tt-Pxu"/>
+                            <constraint firstItem="sM1-1G-f7t" firstAttribute="trailing" secondItem="YUZ-CZ-JMO" secondAttribute="trailing" type="default" id="JNS-PP-K9X"/>
+                            <constraint firstItem="sM1-1G-f7t" firstAttribute="leading" secondItem="YUZ-CZ-JMO" secondAttribute="leading" type="default" id="cZC-rm-Rl2"/>
+                            <constraint firstItem="sM1-1G-f7t" firstAttribute="top" secondItem="YUZ-CZ-JMO" secondAttribute="top" type="default" id="caf-7e-Cb7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6nT-HB-iSa"/>
+                    <connections>
+                        <outlet property="webView" destination="sM1-1G-f7t" id="36I-eD-bB1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GHE-nn-62c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-226" y="-348"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qRg-by-yV4">
+            <objects>
+                <navigationController id="hNM-cK-DiU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VFw-Dw-FPj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2DN-Xs-NcZ" kind="relationship" relationship="rootViewController" id="zW3-Y4-ciI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4t0-4v-ABi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1273" y="-358"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RSSFeedViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RSSFeedViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refreshRSS:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="rightBarButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="rssFeedTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="WebViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
