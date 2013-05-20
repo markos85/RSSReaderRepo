@@ -23,7 +23,6 @@
 
 @property (strong, nonatomic) RSSFeedService          *feedService;
 @property (strong, nonatomic) NSMutableArray          *rssFeedList;
-@property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) UIAlertView             *alertView;
 @property (nonatomic)         BOOL                     isOnline;
 
@@ -104,16 +103,6 @@
     return _feedService;
 }
 
-- (UIActivityIndicatorView *) activityIndicator
-{
-    if (!_activityIndicator)
-    {
-        _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    }
-    
-    return _activityIndicator;
-}
-
 - (NSManagedObjectContext *)managedObjectContext
 {
     NSManagedObjectContext *context = nil;
@@ -157,24 +146,25 @@
 
 #pragma mark - Public methods
 
+- (void) showActivityIndicator
+{
+    [super showActivityIndicator];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.activityIndicator];
+}
+
+- (void) hideActivityIndicator
+{
+    [super hideActivityIndicator];
+    
+    self.navigationItem.rightBarButtonItem = self.rightBarButton;
+}
+
 #pragma mark - Action methods
 
 - (IBAction)refreshRSS:(UIBarButtonItem *)sender
 {
     [self refresh];
-}
-
-- (void) showActivityIndicator
-{
-    self.activityIndicator.hidesWhenStopped = YES;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.activityIndicator];
-    [self.activityIndicator startAnimating];
-}
-
-- (void) hideActivityIndicator
-{
-    [self.activityIndicator stopAnimating];
-    self.navigationItem.rightBarButtonItem = self.rightBarButton;
 }
 
 /*--------------------------------------------------------------

@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "RSSFeed.h"
+#import "BasicViewController.h"
 
-@interface WebViewController : UIViewController
+@interface WebViewController : BasicViewController <UIWebViewDelegate>
 
 @property (strong, nonatomic) RSSFeed *rssEntry;
 @property (strong, nonatomic) IBOutlet UIWebView *webView;

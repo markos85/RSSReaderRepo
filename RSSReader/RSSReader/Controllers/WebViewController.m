@@ -8,13 +8,21 @@
 
 #import "WebViewController.h"
 
-@implementation WebViewController
+@interface WebViewController ()
+
+- (void) setDelegates;
+
+@end
+
+@implementation WebViewController 
 
 #pragma mark - View Lifecycle
 
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self setDelegates];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -45,6 +53,46 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == (UIInterfaceOrientationPortrait | UIInterfaceOrientationMaskLandscape));
+}
+
+#pragma mark - UIWebViewDelegate methods
+
+- (void) webViewDidStartLoad:(UIWebView *)webView
+{
+    [self showActivityIndicator];
+}
+
+- (void) webViewDidFinishLoad:(UIWebView *)webView
+{
+    [self hideActivityIndicator];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [self hideActivityIndicator];
+}
+
+#pragma mark - Public methods
+
+- (void) showActivityIndicator
+{
+    [super showActivityIndicator];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.activityIndicator];
+}
+
+- (void) hideActivityIndicator
+{
+    [super hideActivityIndicator];
+    
+    self.navigationItem.rightBarButtonItem = nil;
+}
+
+#pragma mark - Private methods
+
+- (void) setDelegates
+{
+    [self.webView setDelegate:self];
 }
 
 - (void)viewDidUnload

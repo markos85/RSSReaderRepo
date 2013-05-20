@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "RSSFeedService.h"
 #import "RSSFeedProtocol.h"
+#import "BasicViewController.h"
 
-@interface RSSFeedViewController : UIViewController <RSSFeedProtocol>
+@interface RSSFeedViewController : BasicViewController <RSSFeedProtocol>
 
 @property (strong, nonatomic) IBOutlet UITableView *rssFeedTableView;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *rightBarButton;

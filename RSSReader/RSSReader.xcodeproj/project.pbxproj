@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6919D89D174A5B5000B9A679 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6919D89C174A5B5000B9A679 /* BasicViewController.m */; };
 		697E58841746219A00EC356C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697E58831746219A00EC356C /* UIKit.framework */; };
 		697E58861746219A00EC356C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697E58851746219A00EC356C /* Foundation.framework */; };
 		697E58881746219A00EC356C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697E58871746219A00EC356C /* CoreGraphics.framework */; };
@@ -63,6 +64,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6919D89B174A5B5000B9A679 /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
+		6919D89C174A5B5000B9A679 /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
 		697E58801746219A00EC356C /* RSSReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		697E58831746219A00EC356C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		697E58851746219A00EC356C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -286,6 +289,8 @@
 		697E58FB1746380D00EC356C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6919D89B174A5B5000B9A679 /* BasicViewController.h */,
+				6919D89C174A5B5000B9A679 /* BasicViewController.m */,
 				697E58FC174638EB00EC356C /* RSSFeedViewController.h */,
 				697E58FD174638EB00EC356C /* RSSFeedViewController.m */,
 				697E595817466FAA00EC356C /* WebViewController.h */,
@@ -515,6 +520,7 @@
 				697E5995174A294900EC356C /* TBXML.m in Sources */,
 				697E599B174A38BF00EC356C /* TBXMLParser.m in Sources */,
 				697E599F174A3A8D00EC356C /* CoreDataHelper.m in Sources */,
+				6919D89D174A5B5000B9A679 /* BasicViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
