@@ -7,6 +7,7 @@
 //
 
 #import "CoreDataHelper.h"
+#import "NSArray+Tools.h"
 
 @implementation CoreDataHelper
 
@@ -35,7 +36,6 @@
     for (NSManagedObject *managedObject in items)
     {
     	[[self managedObjectContext] deleteObject:managedObject];
-    	NSLog(@"%@ object deleted",entityDescription);
     }
     if (![[self managedObjectContext] save:&error])
     {
@@ -47,7 +47,10 @@
 {
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:entityDescription];
-    return [managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    NSMutableArray *results = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    [NSArray sortDateArray:results withName:@"pubDate"];
+    
+    return results;
 }
 
 static CoreDataHelper *shared = nil;

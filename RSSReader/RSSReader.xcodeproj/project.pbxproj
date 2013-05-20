@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6919D89D174A5B5000B9A679 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6919D89C174A5B5000B9A679 /* BasicViewController.m */; };
+		6919D8A1174A62CC00B9A679 /* NSArray+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 6919D8A0174A62CC00B9A679 /* NSArray+Tools.m */; };
+		6919D8A5174A6C1200B9A679 /* NSDate+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6919D8A4174A6C1200B9A679 /* NSDate+Utils.m */; };
 		697E58841746219A00EC356C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697E58831746219A00EC356C /* UIKit.framework */; };
 		697E58861746219A00EC356C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697E58851746219A00EC356C /* Foundation.framework */; };
 		697E58881746219A00EC356C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697E58871746219A00EC356C /* CoreGraphics.framework */; };
@@ -66,6 +68,10 @@
 /* Begin PBXFileReference section */
 		6919D89B174A5B5000B9A679 /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
 		6919D89C174A5B5000B9A679 /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
+		6919D89F174A62CC00B9A679 /* NSArray+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Tools.h"; sourceTree = "<group>"; };
+		6919D8A0174A62CC00B9A679 /* NSArray+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Tools.m"; sourceTree = "<group>"; };
+		6919D8A3174A6C1200B9A679 /* NSDate+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utils.h"; sourceTree = "<group>"; };
+		6919D8A4174A6C1200B9A679 /* NSDate+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utils.m"; sourceTree = "<group>"; };
 		697E58801746219A00EC356C /* RSSReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		697E58831746219A00EC356C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		697E58851746219A00EC356C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -187,6 +193,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6919D89E174A627600B9A679 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				6919D89F174A62CC00B9A679 /* NSArray+Tools.h */,
+				6919D8A0174A62CC00B9A679 /* NSArray+Tools.m */,
+				6919D8A3174A6C1200B9A679 /* NSDate+Utils.h */,
+				6919D8A4174A6C1200B9A679 /* NSDate+Utils.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		697E58771746219A00EC356C = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +244,7 @@
 		697E588B1746219A00EC356C /* RSSReader */ = {
 			isa = PBXGroup;
 			children = (
+				6919D89E174A627600B9A679 /* Categories */,
 				697E599C174A3A5800EC356C /* Helpers */,
 				697E5965174A194E00EC356C /* Protocols */,
 				697E592A1746583A00EC356C /* Data */,
@@ -521,6 +539,8 @@
 				697E599B174A38BF00EC356C /* TBXMLParser.m in Sources */,
 				697E599F174A3A8D00EC356C /* CoreDataHelper.m in Sources */,
 				6919D89D174A5B5000B9A679 /* BasicViewController.m in Sources */,
+				6919D8A1174A62CC00B9A679 /* NSArray+Tools.m in Sources */,
+				6919D8A5174A6C1200B9A679 /* NSDate+Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

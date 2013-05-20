@@ -9,6 +9,7 @@
 #import "TBXMLParser.h"
 #import "TBXML.h"
 #import "RSSFeed.h"
+#import "NSDate+Utils.h"
 
 #define CHANNEL  @"channel"
 #define ITEM     @"item"
@@ -16,6 +17,7 @@
 #define MEDIA    @"media:thumbnail"
 #define LINK     @"link"
 #define URL      @"url"
+#define DATE     @"pubDate"
 
 @implementation TBXMLParser
 
@@ -23,6 +25,9 @@
 {
     TBXML * tbxml = [[TBXML alloc] initWithXMLData:xmlData];
     TBXMLElement *root = tbxml.rootXMLElement;
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    
     if (root)
     {
         TBXMLElement * channel = [TBXML childElementNamed:CHANNEL parentElement:root];
@@ -55,6 +60,13 @@
                 {
                     RSSFeedEntry.thumbnailLarge = [TBXML valueOfAttributeNamed:URL forElement:largeImage];
                 }
+                TBXMLElement *releaseDate = [TBXML childElementNamed:DATE parentElement:item];
+                if (releaseDate != nil)
+                {
+                    NSString *date = [TBXML textForElement:releaseDate];
+                    RSSFeedEntry.pubDate = [NSDate convertFromServerUTCStringToLocalTime:date];
+                }
+                
                 
                 item = [TBXML nextSiblingNamed:ITEM searchFromElement:item];
             }

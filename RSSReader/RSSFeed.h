@@ -15,7 +15,7 @@
 
 @property (nonatomic, retain) NSString * desc;
 @property (nonatomic, retain) NSString * link;
-@property (nonatomic, retain) NSString * pubDate;
+@property (nonatomic, retain) NSDate   * pubDate;
 @property (nonatomic, retain) NSString * thumbnailLarge;
 @property (nonatomic, retain) NSString * thumbnailSmall;
 @property (nonatomic, retain) NSString * title;
